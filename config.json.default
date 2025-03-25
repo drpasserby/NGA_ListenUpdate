@@ -1,0 +1,18 @@
+// 请把所有的“//注释”删掉，并把该文件重命名为config.json。
+{
+    // 这里填写需要监听的tid，格式为纯数字就行
+    "listen_tid": [
+        
+    ],
+    // 这里填写server酱的sendkey，目前只支持sc3酱
+    "sendkey": "",
+    // 这里填写NGA的有效账号cookies，目前实测只需要以下几项就能正常运行
+    "cookies": {
+        "ngaPassportCid":"",
+        "ngaPassportUid":"",
+        "ngaPassportUrlencodedUname":"",
+        "ngaPassportOid":"",
+        "ngacn0comUserInfoCheck":"",
+        "bbsmisccookies":""
+    }
+}
