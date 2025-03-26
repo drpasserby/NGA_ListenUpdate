@@ -1,6 +1,15 @@
+from bs4 import BeautifulSoup
+
 # ========== 通用函数:获取网页数据 ==========
-def get_page():
-    pass
+def get_page(url):
+    try:
+        response = requests.get(url, headers=headers, cookies=cookies, timeout=10)
+        response.raise_for_status()
+    except Exception as e:
+        print(f"请求失败: {e}")
+        return []
+    soup = BeautifulSoup(response.text, 'html.parser')
+    return soup
 
 # ========== 功能函数1:获取帖子最后一页页码 ========== 
 def get_lastpage():
