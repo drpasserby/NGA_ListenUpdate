@@ -4,6 +4,8 @@
     "listen_tid": [
         
     ],
+    // 这里是日志开关，true和false设定开关状态，默认开启
+    "isLog":true,
     // 这里填写server酱的sendkey，目前只支持sc3酱
     "sendkey": "",
     // 这里填写NGA的有效账号cookies，目前实测只需要以下几项就能正常运行
