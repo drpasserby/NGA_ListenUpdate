@@ -12,7 +12,7 @@ def get_page(url):
     return soup
 
 # ========== 功能函数1:获取帖子最后一页页码 ========== 
-def get_lastpage():
+def get_lastpage(tid):
     soup = get_page("https://bbs.nga.cn/read.php?tid="+str(tid))
     return int(re.search(r'__PAGE\s*=\s*{.*?1:\s*(\d+),', soup.select_one('#pagebtop script').string).group(1))
     
