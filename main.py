@@ -39,7 +39,14 @@ def get_config():
     
 # ========== 功能函数4:读取监听记录 ==========
 def get_listen_log():
-    pass
+    global listen_log
+    try:
+        with open("listen_log.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
+            listen_log = data["listen_log"]
+    except Exception as e:
+        print(f"读取错误: {e}")
+        return []
 
 # ========== 通知功能 ==========
 def send_notification():
