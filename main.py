@@ -17,8 +17,10 @@ def get_lastpage(tid):
     return int(re.search(r'__PAGE\s*=\s*{.*?1:\s*(\d+),', soup.select_one('#pagebtop script').string).group(1))
     
 # ========== 功能函数2:获取当前页的最新一层楼 ==========
-def get_lastfloornum():
-    pass
+def get_lastfloornum(tid,page):
+    soup = get_page("https://bbs.nga.cn/read.php?tid="+str(tid)+"&page="+str(page))
+    floors = soup.select('.postrow td.c1 span.posterinfo')
+    return int(floors[-1]['id'].split('posterinfo')[-1])
 
 # ========== 功能函数3:读取配置文件 ==========
 def get_config():
