@@ -24,7 +24,18 @@ def get_lastfloornum(tid,page):
 
 # ========== 功能函数3:读取配置文件 ==========
 def get_config():
-    pass
+    # 修改全局变量
+    global listen_tid,sendkey,cookies,isLog
+    try:
+        with open("config.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
+        listen_tid = data["listen_tid"]
+        sendkey = data["sendkey"]
+        cookies = data["cookies"]
+        isLog = data["isLog"]
+    except Exception as e:
+        print(f"变量不存在或者其他错误: {e}")
+        return []
     
 # ========== 功能函数4:读取监听记录 ==========
 def get_listen_log():
